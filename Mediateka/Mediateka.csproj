@@ -74,6 +74,7 @@
     <Compile Include="Interfaces\IPlayList.cs" />
     <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Interfaces\IWebElement.cs" />
+    <Compile Include="Mediateka.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
