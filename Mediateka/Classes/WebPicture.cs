@@ -7,7 +7,8 @@ using Mediateka.Interfaces;
 
 namespace Mediateka.Classes
 {
-    class WebPicture : Picture, IWebElement;
+    class WebPicture : Picture, IWebElement
     {
+        public string URL => throw new NotImplementedException();
     }
 }
