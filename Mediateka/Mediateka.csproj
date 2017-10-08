@@ -62,6 +62,7 @@
     <Compile Include="Classes\DiscTrack.cs" />
     <Compile Include="Classes\MediaItem.cs" />
     <Compile Include="Classes\Picture.cs" />
+    <Compile Include="Classes\PlayList.cs" />
     <Compile Include="Classes\Rating.cs" />
     <Compile Include="Classes\Track.cs" />
     <Compile Include="Classes\WebPicture.cs" />
