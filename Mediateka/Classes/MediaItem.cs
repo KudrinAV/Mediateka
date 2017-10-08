@@ -7,13 +7,15 @@ using Mediateka.Interfaces;
 
 namespace Mediateka.Classes
 {
-    public class WebPicture : Picture, IWebElement
+    public class MediaItem : INameable
     {
-        public string URL { get; private set; }
+        public string Name { get; private set; }
 
-        public WebPicture(string name, string url) : base(name)
+        public MediaItem(string name)
         {
-            URL = url;
+            Name = name;
         }
+
+
     }
 }

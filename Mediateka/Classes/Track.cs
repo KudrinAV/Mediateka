@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mediateka.Interfaces
+namespace Mediateka.Classes
 {
-    interface ITrack : IMediaItem
+    class Track 
     {
-        TimeSpan Duration { get; }
-        String Genre { get; }
     }
 }

@@ -9,8 +9,10 @@ using Mediateka.Interfaces;
 
 namespace Mediateka.Classes
 {
-    class Picture : IPicture
+    public class Picture : MediaItem, IPicture
     {
+        public string Name { get; private set; }
+
         public Size Size => throw new NotImplementedException();
 
         public Rating Rating => throw new NotImplementedException();
@@ -21,6 +23,9 @@ namespace Mediateka.Classes
 
         public DateTime CreationTime => throw new NotImplementedException();
 
-        public string Name => throw new NotImplementedException();
+        public Picture(string name) : base(name)
+        {
+            Name = name;
+        }
     }
 }
