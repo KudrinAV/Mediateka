@@ -11,7 +11,7 @@ namespace Mediateka.Classes
     {
         public string URL { get; private set; }
 
-        public WebTrack(string name, string url) : base(name)
+        public WebTrack(string name,string genre ,string url) : base(name, genre)
         {
             URL = url;
         }

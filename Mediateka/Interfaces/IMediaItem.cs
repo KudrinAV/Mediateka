@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Mediateka.Interfaces
 {
-    public interface IMediaItem 
+    public interface IMediaItem : INameable
     {
         Rating Rating { get; }
         StreamReader MediaStream { get; }
