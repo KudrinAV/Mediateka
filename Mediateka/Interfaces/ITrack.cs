@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mediateka.Interfaces
 {
-    interface IPicture : INameable, IMediaItem
+    interface ITrack : INameable , IMediaItem
     {
-        System.Drawing.Size Size { get; }
+        TimeSpan Duration { get; }
+        String Genre { get; }
     }
 }
