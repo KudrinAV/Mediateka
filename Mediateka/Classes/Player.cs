@@ -12,14 +12,28 @@ namespace Mediateka.Classes
     {
         MediaPlayer.MediaPlayer myMediaPlayer = new MediaPlayer.MediaPlayer();
 
-        public Player(ICollection<IWebElement> items)
+        public Player(ICollection<IMediaItem> items)
         {
-            foreach(IWebElement item in items)
+            foreach(IMediaItem item in items)
             {
-                myMediaPlayer.Open(item.URL);
+
+                Console.ReadLine();
+            }
+
+        }
+
+        public Player(ICollection<IDiscElement> items)
+        {
+            foreach(IDiscElement item in items)
+            {
+                myMediaPlayer.Open(item.Path);
                 myMediaPlayer.Play();
                 Console.ReadLine();
             }
+        }
+
+        public Player(IPlayList playList)
+        {
 
         }
     }

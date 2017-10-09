@@ -11,7 +11,7 @@ namespace Mediateka.Interfaces
     public interface IMediaItem : INameable
     {
         Rating Rating { get; }
-        StreamReader MediaStream { get; }
+        FileStream MediaStream { get; }
         Int64 PhysicalSize { get; }
         DateTime CreationTime { get; }
     }

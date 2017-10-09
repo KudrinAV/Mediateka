@@ -17,7 +17,7 @@ namespace Mediateka.Classes
 
         public Rating Rating => throw new NotImplementedException();
 
-        public StreamReader MediaStream => throw new NotImplementedException();
+        public FileStream MediaStream => throw new NotImplementedException();
 
         public long PhysicalSize => throw new NotImplementedException();
 

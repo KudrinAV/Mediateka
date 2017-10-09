@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mediateka.Interfaces
 {
-    interface IDiscElement
+    public interface IDiscElement
     {
         string Path { get; }
     }
