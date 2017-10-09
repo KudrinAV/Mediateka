@@ -7,6 +7,9 @@ using Mediateka.Classes;
 using Mediateka.Interfaces;
 using System.Media;
 using WMPLib;
+using System.Windows.Forms;
+using System.Drawing;
+using System.IO;
 
 namespace Mediateka
 {
@@ -17,24 +20,23 @@ namespace Mediateka
             Mediateka myMediateka = new Mediateka();
             IMediaItem picture = new DiscPicture("first", "E:\\picture1.jpg");
             IMediaItem track = new DiscTrack("look what u made me do","pop", "E:\\track1.mp3");
+            IMediaItem track2 = new DiscTrack("kek","book" ,"E:\\track1.wav");
             //myMediateka.Add(picture);
-            myMediateka.Add(track);
-            myMediateka.Add(track);
+            myMediateka.Add(track2);
+            myMediateka.Add(track2);
             foreach(var temp in myMediateka)
             {
                 Console.WriteLine(temp.Name);
             }
-            WindowsMediaPlayer wplayer = new WindowsMediaPlayer();
+
+            Player myPlayer = new Player(myMediateka);
+            //WindowsMediaPlayer wplayer = new WindowsMediaPlayer();
             //wplayer.URL = "E:\\track1.mp3";
-            //wplayer.controls.play();
-            //wplayer.controls.
-            wplayer.URL = "E:\\picture1.jpg";
-            wplayer.controls.play();
-            foreach (IMediaItem item in myMediateka)
-            {
-                //wplayer
-                Console.ReadKey();
-            }
+            ////wplayer.controls.play();
+            //SoundPlayer mySoundPlayer = new SoundPlayer();
+            //mySoundPlayer.Stream = track2.MediaStream;
+            //mySoundPlayer.PlaySync();
+            Console.ReadKey();
             
         }
     }
