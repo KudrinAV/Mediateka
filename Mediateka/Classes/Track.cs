@@ -10,23 +10,23 @@ namespace Mediateka.Classes
 {
     public class Track : MediaItem, ITrack
     {
-        public string Name { get; private set; }
+        //public string Name { get; private set; }
 
-        public TimeSpan Duration => throw new NotImplementedException();
+        public TimeSpan Duration { get; }
 
         public string Genre { get; private set; }
 
-        public Rating Rating => throw new NotImplementedException();
+        public Rating Rating { get; private set; }
 
-        public StreamReader MediaStream => throw new NotImplementedException();
+        public FileStream MediaStream { get; protected set; }
 
-        public long PhysicalSize => throw new NotImplementedException();
+        public long PhysicalSize { get; }
 
-        public DateTime CreationTime => throw new NotImplementedException();
+        public DateTime CreationTime { get; protected set; }
 
         public Track(string name, string genre) : base(name)
         {
-            Name = name;
+            //Name = name;
             Genre = genre;
         }
     }

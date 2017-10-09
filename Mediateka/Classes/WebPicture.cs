@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Mediateka.Interfaces;
+using System.IO;
 
 namespace Mediateka.Classes
 {
@@ -14,6 +15,8 @@ namespace Mediateka.Classes
         public WebPicture(string name, string url) : base(name)
         {
             URL = url;
+            MediaStream = File.OpenRead(url);
+            CreationTime = File.GetCreationTime(url);
         }
     }
 }
