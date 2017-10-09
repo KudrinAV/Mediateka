@@ -9,7 +9,7 @@ using Mediateka.Interfaces;
 
 namespace Mediateka
 {
-    class Mediateka : ICollection<IMediaItem>
+    public class Mediateka : ICollection<IMediaItem>
     {
         private ICollection<IMediaItem> mediaItems = new List<IMediaItem>();
 
@@ -51,5 +51,6 @@ namespace Mediateka
         {
             return mediaItems.GetEnumerator();
         }
+
     }
 }
