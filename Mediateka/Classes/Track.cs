@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,11 +8,13 @@ using Mediateka.Interfaces;
 
 namespace Mediateka.Classes
 {
-    public class Picture : MediaItem, IPicture
+    public class Track : MediaItem, ITrack
     {
         public string Name { get; private set; }
 
-        public Size Size => throw new NotImplementedException();
+        public TimeSpan Duration => throw new NotImplementedException();
+
+        public string Genre { get; private set; }
 
         public Rating Rating => throw new NotImplementedException();
 
@@ -23,9 +24,10 @@ namespace Mediateka.Classes
 
         public DateTime CreationTime => throw new NotImplementedException();
 
-        public Picture(string name) : base(name)
+        public Track(string name, string genre) : base(name)
         {
             Name = name;
+            Genre = genre;
         }
     }
 }

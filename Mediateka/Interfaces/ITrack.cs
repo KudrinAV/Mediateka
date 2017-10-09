@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mediateka.Interfaces
 {
-    interface ITrack : INameable , IMediaItem
+    interface ITrack : IMediaItem
     {
         TimeSpan Duration { get; }
         String Genre { get; }

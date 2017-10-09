@@ -58,9 +58,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DiscPicture.cs" />
+    <Compile Include="Classes\DiscTrack.cs" />
+    <Compile Include="Classes\MediaItem.cs" />
     <Compile Include="Classes\Picture.cs" />
+    <Compile Include="Classes\PlayList.cs" />
     <Compile Include="Classes\Rating.cs" />
+    <Compile Include="Classes\Track.cs" />
     <Compile Include="Classes\WebPicture.cs" />
+    <Compile Include="Classes\WebTrack.cs" />
     <Compile Include="Interfaces\IDiscElement.cs" />
     <Compile Include="Interfaces\IMediaItem.cs" />
     <Compile Include="Interfaces\INameable.cs" />
@@ -68,6 +74,7 @@
     <Compile Include="Interfaces\IPlayList.cs" />
     <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Interfaces\IWebElement.cs" />
+    <Compile Include="Classes\Mediateka.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

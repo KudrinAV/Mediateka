@@ -7,13 +7,13 @@ using Mediateka.Interfaces;
 
 namespace Mediateka.Classes
 {
-    public class WebPicture : Picture, IWebElement
+    class DiscTrack : Track, IDiscElement
     {
-        public string URL { get; private set; }
+        public string Path { get; private set; }
 
-        public WebPicture(string name, string url) : base(name)
+        public DiscTrack(string name, string genre, string path) : base(name, genre)
         {
-            URL = url;
+            Path = path;
         }
     }
 }
