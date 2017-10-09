@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mediateka.Interfaces
 {
-    interface IWebElement
+    public interface IWebElement
     {
         string URL { get; }
     }

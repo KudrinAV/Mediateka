@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mediateka.Interfaces
 {
-    interface IPicture : IMediaItem
+    public interface IPicture : IMediaItem
     {
         System.Drawing.Size Size { get; }
     }

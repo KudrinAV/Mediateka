@@ -13,14 +13,23 @@ namespace Mediateka
         static void Main(string[] args)
         {
             Mediateka myMediateka = new Mediateka();
-            IMediaItem picture = new WebPicture("first", "networld");
-            IMediaItem track = new DiscTrack("look what u made me do","pop", "U SHALL NO PATH");
+            IMediaItem picture = new DiscPicture("first", "E:\\picture1.jpg");
+            IMediaItem track = new DiscTrack("look what u made me do","pop", "E:\\track1.mp3");
             myMediateka.Add(picture);
+            myMediateka.Add(track);
             myMediateka.Add(track);
             foreach(var temp in myMediateka)
             {
                 Console.WriteLine(temp.Name);
             }
+            MediaPlayer.MediaPlayer myMediaPlayer = new MediaPlayer.MediaPlayer();
+            foreach(IDiscElement item in myMediateka)
+            {
+                myMediaPlayer.Open(item.Path);
+                myMediaPlayer.Play();
+                Console.ReadKey();
+            }
+            Console.ReadKey();
         }
     }
 }

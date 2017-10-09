@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mediateka.Interfaces
 {
-    interface IPlayList
+    public interface IPlayList
     {
         TimeSpan Duration { get; }
         ICollection<IMediaItem> Items { get; }
