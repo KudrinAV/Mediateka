@@ -11,21 +11,21 @@ namespace Mediateka.Classes
 {
     public class Picture : MediaItem, IPicture
     {
-        public string Name { get; private set; }
+       // public string Name { get; private set; }
 
-        public Size Size => throw new NotImplementedException();
+        public Size Size { get; protected set; }
 
-        public Rating Rating => throw new NotImplementedException();
+        public Rating Rating { get; protected set; }
 
-        public FileStream MediaStream => throw new NotImplementedException();
+        public FileStream MediaStream { get; protected set; }
 
-        public long PhysicalSize => throw new NotImplementedException();
+        public long PhysicalSize { get; }
 
-        public DateTime CreationTime => throw new NotImplementedException();
+        public DateTime CreationTime { get; protected set; }
 
         public Picture(string name) : base(name)
         {
-            Name = name;
+            //Name = name;
         }
     }
 }
