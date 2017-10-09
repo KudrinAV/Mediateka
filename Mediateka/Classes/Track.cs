@@ -16,7 +16,7 @@ namespace Mediateka.Classes
 
         public string Genre { get; private set; }
 
-        public Rating Rating { get; private set }
+        public Rating Rating { get; private set; }
 
         public FileStream MediaStream { get; protected set; }
 

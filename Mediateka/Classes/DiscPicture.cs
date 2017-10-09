@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Mediateka.Interfaces;
+using System.IO;
 
 namespace Mediateka.Classes
 {
@@ -14,6 +15,8 @@ namespace Mediateka.Classes
         public DiscPicture(string name, string path) : base(name)
         {
             Path = path;
+            MediaStream = File.OpenRead(path);
+            CreationTime = File.GetCreationTime(path);
         }
     }
 }
