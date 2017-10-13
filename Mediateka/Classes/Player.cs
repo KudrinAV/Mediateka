@@ -13,53 +13,44 @@ namespace Mediateka.Classes
     {
         SoundPlayer soundPlayer = new SoundPlayer();
    
-        public Player(IPlayList playList)
+        public Player(Mediateka playList)
         {
-            Console.Clear();
-            int switchCase = 2;
-            foreach (IMediaItem item in playList.Items)
+            int switchCase = 0;
+            foreach (IMediaItem item in playList)
             {
-
+                Console.Clear();
                 Console.WriteLine("1. Запуск проигрывания");
                 Console.WriteLine("2. Остановка проигрывания");
-                soundPlayer.Stream = item.MediaStream;
+                Console.WriteLine("3. Cлудующая песня");
+                Console.WriteLine(item.Name);
+                //soundPlayer.Stream = item.MediaStream;
                 while (switchCase != 3)
                 {
                     switchCase = Int32.Parse(Console.ReadLine());
                     switch (switchCase)
                     {
-                        case 1: soundPlayer.PlaySync(); break;
-                        case 2: soundPlayer.Stop(); break;
-                        case 3: break;
+                        case 1: PlayMusic(); break;
+                        case 2: StopMusic(); break;
+                        case 3: NextTrack(); break;
                         default: break;
                     }
                 }
             }
         }
 
-        public Player(Mediateka playList)
+        private void PlayMusic()
         {
-            int switchCase = 1;
-            foreach (IMediaItem item in playList)
-            {
-                Console.Clear();
-                Console.WriteLine("1. Запуск проигрывания");
-                Console.WriteLine("2. Остановка проигрывания");
-                Console.WriteLine("3. Выход из текущей песни");
-                Console.WriteLine(item.Name + item.Rating);
-                soundPlayer.Stream = item.MediaStream;
-                while (switchCase != 3)
-                {
-                    switchCase = Int32.Parse(Console.ReadLine());
-                    switch (switchCase)
-                    {
-                        case 1: soundPlayer.PlaySync(); break;
-                        case 2: soundPlayer.Stop(); break;
-                        case 3: break;
-                        default: break;
-                    }
-                }
-            }
+            Console.WriteLine("Music is playing");
+        }
+
+        private void StopMusic()
+        {
+            Console.WriteLine("Music is stopped");
+        }
+
+        public void NextTrack()
+        {
+            Console.WriteLine("Next track is playing");
         }
 
 
