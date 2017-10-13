@@ -13,53 +13,78 @@ namespace Mediateka.Classes
     {
         SoundPlayer soundPlayer = new SoundPlayer();
    
-        public Player(IPlayList playList)
+        public Player(Mediateka playList)
         {
-            Console.Clear();
-            int switchCase = 2;
-            foreach (IMediaItem item in playList.Items)
+            foreach (IMediaItem item in playList)
             {
+                if (item.AmITrack) { ItsSong(item); }
+                else { ItsPicture(item); }
 
-                Console.WriteLine("1. Запуск проигрывания");
-                Console.WriteLine("2. Остановка проигрывания");
-                soundPlayer.Stream = item.MediaStream;
-                while (switchCase != 3)
+            }
+        }
+
+        private void ItsSong(IMediaItem item)
+        {
+            int switchCase = 0;
+            Console.Clear();
+            Console.WriteLine("1. Запуск проигрывания");
+            Console.WriteLine("2. Остановка проигрывания");
+            Console.WriteLine("3. Cлудующая песня");
+            Console.WriteLine(item.Name);
+            //soundPlayer.Stream = item.MediaStream;
+            while (switchCase != 3)
+            {
+                switchCase = Int32.Parse(Console.ReadLine());
+                switch (switchCase)
                 {
-                    switchCase = Int32.Parse(Console.ReadLine());
-                    switch (switchCase)
-                    {
-                        case 1: soundPlayer.PlaySync(); break;
-                        case 2: soundPlayer.Stop(); break;
-                        case 3: break;
-                        default: break;
-                    }
+                    case 1: PlayMusic(); break;
+                    case 2: StopMusic(); break;
+                    case 3: NextElement(); break;
+                    default: break;
                 }
             }
         }
 
-        public Player(Mediateka playList)
+        private void ItsPicture(IMediaItem item)
         {
-            int switchCase = 1;
-            foreach (IMediaItem item in playList)
+            int switchCase = 0;
+            Console.Clear();
+            Console.WriteLine("1. Картинка");
+            Console.WriteLine("2. Cлудующий элемент");
+            Console.WriteLine(item.Name);
+            //soundPlayer.Stream = item.MediaStream;
+            while (switchCase != 2)
             {
-                Console.Clear();
-                Console.WriteLine("1. Запуск проигрывания");
-                Console.WriteLine("2. Остановка проигрывания");
-                Console.WriteLine("3. Выход из текущей песни");
-                Console.WriteLine(item.Name + item.Rating);
-                soundPlayer.Stream = item.MediaStream;
-                while (switchCase != 3)
+                switchCase = Int32.Parse(Console.ReadLine());
+                switch (switchCase)
                 {
-                    switchCase = Int32.Parse(Console.ReadLine());
-                    switch (switchCase)
-                    {
-                        case 1: soundPlayer.PlaySync(); break;
-                        case 2: soundPlayer.Stop(); break;
-                        case 3: break;
-                        default: break;
-                    }
+                    case 1: ShowPicture(); break;
+                    case 2: NextElement(); break;
+                    default: break;
                 }
             }
+        }
+
+
+        private void ShowPicture()
+        {
+            Console.WriteLine("Picture is displaying");
+        }
+
+        private void PlayMusic()
+        {
+            Console.WriteLine("Music is playing");
+        }
+
+        private void StopMusic()
+        {
+            Console.WriteLine("Music is stopped");
+        }
+
+        public void NextElement()
+        {
+            Console.WriteLine("Next element is playing");
+            Console.ReadLine();
         }
 
 

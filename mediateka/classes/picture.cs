@@ -23,9 +23,12 @@ namespace Mediateka.Classes
 
         public DateTime CreationTime { get; protected set; }
 
+        public bool AmITrack { get; }
+
         public Picture(string name) : base(name)
         {
             //Name = name;
+            AmITrack = false;
         }
     }
 }
