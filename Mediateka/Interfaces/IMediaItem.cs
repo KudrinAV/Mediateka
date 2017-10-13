@@ -14,5 +14,6 @@ namespace Mediateka.Interfaces
         FileStream MediaStream { get; }
         Int64 PhysicalSize { get; }
         DateTime CreationTime { get; }
+        bool AmITrack { get; }
     }
 }

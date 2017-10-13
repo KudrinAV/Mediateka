@@ -24,10 +24,13 @@ namespace Mediateka.Classes
 
         public DateTime CreationTime { get; protected set; }
 
+        public bool AmITrack { get;  }
+
         public Track(string name, string genre) : base(name)
         {
             //Name = name;
             Genre = genre;
+            AmITrack = true;
         }
     }
 }
