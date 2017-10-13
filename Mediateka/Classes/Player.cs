@@ -39,7 +39,7 @@ namespace Mediateka.Classes
                 {
                     case 1: PlayMusic(); break;
                     case 2: StopMusic(); break;
-                    case 3: NextElement(); Console.ReadLine(); break;
+                    case 3: NextElement(); break;
                     default: break;
                 }
             }
@@ -53,13 +53,13 @@ namespace Mediateka.Classes
             Console.WriteLine("2. Cлудующий элемент");
             Console.WriteLine(item.Name);
             //soundPlayer.Stream = item.MediaStream;
-            while (switchCase != 3)
+            while (switchCase != 2)
             {
                 switchCase = Int32.Parse(Console.ReadLine());
                 switch (switchCase)
                 {
                     case 1: ShowPicture(); break;
-                    case 2: NextElement(); Console.ReadLine(); break;
+                    case 2: NextElement(); break;
                     default: break;
                 }
             }
@@ -84,6 +84,7 @@ namespace Mediateka.Classes
         public void NextElement()
         {
             Console.WriteLine("Next element is playing");
+            Console.ReadLine();
         }
 
 
